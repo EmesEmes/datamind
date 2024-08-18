@@ -46,7 +46,10 @@ li {
     list-style: none;
 }
 
-
+#activo {
+    color: #fff;
+    border-bottom: .2rem solid white;
+}
 
 .container {
     max-width: 120rem;
@@ -95,7 +98,7 @@ header {
     border-bottom: 0.1rem solid rgb(36, 36, 36);
 }
 
- .scrollwatcher {
+.scrollwatcher {
     height: .3rem;
     position: fixed;
     top: 0;
@@ -109,12 +112,43 @@ header {
     margin-top: 10rem;
 }
 
+@media screen and (max-width: 720px) {
+    .navbar {
+        flex-direction: column;
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .navbar .nav {
+        margin: 0;
+        
+        max-width: 95svw;
+    }
+    .navbar .links {
+        gap: 1.5rem;
+        margin: 2rem;
+        padding: 0;
+    }
+
+    .scrollwatcher {
+        margin-top: 22rem;
+    }
+}
+ 
+
 @keyframes scroll-watcher {
     to { scale: 1 1; }
 }
 /* Hero */
 .hero {
     margin-top: 10rem;
+}
+
+@media screen and (max-width: 500px) {
+    .hero {
+        margin-top: 20rem;
+    }
 }
 .hero .hero-contenedor {
     text-align: center;
@@ -210,6 +244,15 @@ button:hover {
     clip-path: inset();
 }
 
+@media screen and (max-width: 500px) {
+    .grid {
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+        align-items: center;
+    }
+}
+
 .grid p {
     color: white;
     font-size: 3rem;
@@ -278,6 +321,15 @@ button:hover {
     transition: all .5s ease;
 }
 
+@media screen and (max-width: 500px) {
+    .grid {
+        justify-content: center;
+    }
+    .grid .grid-1, .grid .grid-2, .grid .grid-3 , .grid .grid-4 {
+        width: 90svw;
+    }
+}
+
 .grid .grid-3 {
     animation: moveX linear forwards;
     transform: translateX(20rem);
@@ -298,7 +350,6 @@ button:hover {
 
 .grid .grid-1:hover, .grid .grid-2:hover, .grid .grid-3:hover, .grid .grid-4:hover {
     filter: contrast(120%);
-    /* scale: 1.03; */
 }
 
 .clientes {
@@ -356,6 +407,12 @@ button:hover {
     margin-bottom: 8rem;
 }
 
+@media screen and (max-width: 500px) {
+    .section-video p {
+        padding: 2rem;
+    }
+}
+
 .section-video h2 span {
     color: rgb(162, 115, 247);
 }
@@ -365,10 +422,23 @@ button:hover {
     background: linear-gradient(to right, rgb(162, 115, 247), rgb(255, 102, 0));
     border-radius: 2rem
 }
+
+
 .video .video-video {
     padding: .5rem;
     border-radius: 2rem;
     margin-bottom: -1rem;
+}
+
+
+@media screen and (max-width: 500px) {
+    .video {
+        width: 95svw;
+    }
+
+    .video .video-video {
+        width: 95svw;
+    }
 }
 
 
@@ -412,6 +482,12 @@ button:hover {
     margin-top: 8rem;
     border: .1rem solid rgb(162, 115, 247);
     position: relative;
+}
+
+@media screen and (max-width: 500px) {
+    .formulario {
+        width: 90svw;
+    }
 }
 
 .cruz1 {
@@ -481,6 +557,13 @@ footer {
 
 }
 
+@media screen and (max-width: 500px) {
+    footer {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
 footer .footer-derechos p {
     color: rgb(202 198 221);
     
@@ -516,7 +599,6 @@ footer .footer-redes img:hover {
 }
 
 .column {
-    /* margin-top: 20rem; */
     display: flex;
     flex-direction: column;
     place-items: center;
@@ -528,6 +610,26 @@ footer .footer-redes img:hover {
     flex-direction: column-reverse;
     animation: adjust-position linear forwards;
     animation-timeline: scroll(root block);
+}
+
+@media screen and (max-width: 720px) {
+    .columns {
+        
+        grid-template-columns: none;  
+    }
+
+    .column {
+        display: block;
+        flex-direction: column;
+    }
+
+    .column-reverse {
+        flex-direction: column;
+        transform: none;
+        flex-direction: unset;
+        animation: none;
+        animation-timeline: unset;
+    }
 }
 
 @keyframes adjust-position {
@@ -544,6 +646,16 @@ footer .footer-redes img:hover {
     position: relative;
 }
 
+@media screen and (max-width: 500px) {
+    .column .servicio {
+        margin-bottom: 10rem;
+    }
+
+    .servicio .servicio1 {
+        margin-bottom: 10rem;
+    }
+}
+
 .column .servicio img {
     filter: contrast(120%);
     opacity: .5;
@@ -551,6 +663,18 @@ footer .footer-redes img:hover {
 
 .column .servicio1 {
     margin-bottom: 20rem;
+}
+
+@media screen and (max-width: 500px) {
+    .column .servicio1 {
+        margin-bottom: unset;
+        margin-top: 10rem;
+    }
+
+    .columns  img {
+        width: 95svw;
+        border-radius: 2rem;
+    }
 }
 
 .column .servicio p {
@@ -562,7 +686,57 @@ footer .footer-redes img:hover {
     padding: 5rem;
 }
 
+.section-counter {
+    margin-top: 4rem;
+}
 
+.counter-subtitle {
+    font-size: 3.6rem;
+}
+
+.counter {
+    margin-top: 4rem;
+    display: flex;
+    gap: 4rem;
+    justify-content: center;
+}
+
+.counter-item {
+    width: 24rem;
+    height: 24rem;
+    background-color: rgb(113, 40, 250);
+    border-radius: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.counter-item .item-numero {
+    margin-top: 2rem;
+    width: 60%;
+    height: 60%;
+    border: .8rem solid #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+    color: #fff;
+    font-weight: bolder;
+    background-color: rgb(162, 115, 247);
+}
+
+.counter-item p {
+    color: white;
+}
+
+@media screen and (max-width: 720px) {
+    .counter {
+        flex-direction: column;
+        align-items: center;
+    }
+}
 /* Planes */
 
 .section-planes {
@@ -574,6 +748,16 @@ footer .footer-redes img:hover {
     grid-template-columns: repeat(3, 1fr);
     place-items: center;
     gap: 3rem;
+}
+
+@media screen and (max-width: 720px) {
+    .planes {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .planes .plan {
+        width: 95svw;
+    }
 }
 
 .planes .plan {
@@ -640,4 +824,11 @@ footer .footer-redes img:hover {
 
 .contacto-redes .contacto-redes-div img:hover {
     cursor: pointer;
+}
+
+@media screen and (max-width: 720px) {
+    .contacto-grid {
+        margin-top: 20rem;
+        grid-template-columns: unset;
+    }
 }
